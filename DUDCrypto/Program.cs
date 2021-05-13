@@ -1,5 +1,4 @@
 ﻿using DUDCrypto.Data;
-
 using DUDCrypto.Model;
 using DUDCrypto.Model.Discord;
 using DSharpPlus.Entities;
