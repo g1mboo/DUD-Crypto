@@ -143,7 +143,7 @@ namespace DUDCrypto.Commands
             }
             catch (Exception ex) 
             {
-                DiscordLoging.PrintError(ctx.Client, ctx.User, ex);
+                BotLoging.PrintError(ctx.Client, ctx.User, ex);
             }
         }
 
@@ -216,7 +216,7 @@ namespace DUDCrypto.Commands
             }
             catch (Exception ex)
             {
-                DiscordLoging.PrintError(ctx.Client, ctx.User, ex);
+                BotLoging.PrintError(ctx.Client, ctx.User, ex);
             }
         }
 
@@ -274,7 +274,7 @@ namespace DUDCrypto.Commands
             }
             catch (Exception ex)
             {
-                DiscordLoging.PrintError(ctx.Client, ctx.User, ex);
+                BotLoging.PrintError(ctx.Client, ctx.User, ex);
             }
         }
 
@@ -369,7 +369,7 @@ namespace DUDCrypto.Commands
             }
             catch (Exception ex)
             {
-                DiscordLoging.PrintError(ctx.Client, ctx.User, ex);
+                BotLoging.PrintError(ctx.Client, ctx.User, ex);
             }
         }
 

@@ -72,7 +72,7 @@ namespace DUDCrypto.Model.Discord
             Commands = Client.UseCommandsNext(commandsConfig);            
             Commands.RegisterCommands<Commands.CoinsCommands>();
             Commands.RegisterCommands<Commands.HelpCommands>();
-            Commands.RegisterCommands<Commands.TestCommands>();            
+            //Commands.RegisterCommands<Commands.TestCommands>(); //Only for tests           
             Commands.RegisterCommands<Commands.InfoCommands>();
 
             Client.Ready += ClientReady;

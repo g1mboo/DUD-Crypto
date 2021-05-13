@@ -7,13 +7,24 @@ namespace DUDCrypto.Data.Discord
 {
     public static class Author
     {
-        public static string GetNickname(DiscordUser author)
+        public static string Nickname(DiscordUser author) => ParseNickname(author);        
+
+        private static string ParseNickname(DiscordUser author)
         {
-            string authorString = author.ToString().Replace('_', ' ');
-            string nickname = string.Empty;
-            for (int i = authorString.LastIndexOf('(') + 1; i < authorString.LastIndexOf(')'); i++)
-                nickname += authorString[i];
-            return nickname;
+            string result = string.Empty;
+            try
+            {
+                string authorString = author.ToString().Replace('_', ' ');
+                string nickname = string.Empty;
+                for (int i = authorString.LastIndexOf('(') + 1; i < authorString.LastIndexOf(')'); i++)
+                    nickname += authorString[i];
+                result = nickname;
+            }
+            catch(Exception)
+            {
+                result = "UNKNOWN";
+            }            
+            return result;            
         }
     }
 }

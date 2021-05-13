@@ -59,6 +59,7 @@ namespace DUDCrypto.Model.Coinmarketcap.API
 
             return DownloadJson(URL, queryString);
         }
+
         private string DownloadJson(UriBuilder uri, NameValueCollection queryString)
         {
             uri.Query = queryString.ToString();
