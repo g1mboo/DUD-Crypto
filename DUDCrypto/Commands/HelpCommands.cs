@@ -32,7 +32,7 @@ namespace DUDCrypto.Commands
                 }
             };
 
-            embed.AddField($"Commands", $"To see all the commands, enter {DiscordText.SingleLineCode($"{Bot._prefix}help commands")}");
+            embed.AddField($"Commands", $"To see all the commands, enter {DiscordText.SingleLineCode($"{Bot.Prefix}help commands")}");
             embed.AddField($"Creator", $"Alexander Dudkin");
 
             await ctx.Channel.SendMessageAsync(embed: embed);
@@ -59,7 +59,7 @@ namespace DUDCrypto.Commands
                             foreach (var arg in item.Arguments)                            
                                 commandName += $" [{arg.Name}]";
 
-                        commandName = DiscordText.SingleLineCode(Bot._prefix + item.Name + commandName);
+                        commandName = DiscordText.SingleLineCode(Bot.Prefix + item.Name + commandName);
 
                         string description = item.Description + Environment.NewLine + "⠀";
 
@@ -85,7 +85,7 @@ namespace DUDCrypto.Commands
 
                         commandName = commandInfo.Name + commandName;
 
-                        embed.Title = $"About: {DiscordText.SingleLineCode(Bot._prefix + commandName)}";
+                        embed.Title = $"About: {DiscordText.SingleLineCode(Bot.Prefix + commandName)}";
                         embed.Description = DiscordText.Bold(commandInfo.Description);
 
                         await ctx.Channel.SendMessageAsync(embed: embed);

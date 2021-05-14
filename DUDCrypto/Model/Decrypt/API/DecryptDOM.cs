@@ -16,8 +16,8 @@ namespace DUDCrypto.Model.Decrypt.API
             List<News> news = new List<News>();
 
             IWebDriver driver;
-            var options = new ChromeOptions();
-            options.AddArgument("--headless");
+            //var options = new ChromeOptions();
+            //options.AddArgument("--headless");
 
             //using (driver = new ChromeDriver(Environment.CurrentDirectory, options))
             using (driver = new ChromeDriver(Environment.CurrentDirectory))

@@ -18,8 +18,10 @@ namespace DUDCrypto.Model.Discord
 {
     public class Bot
     {
+        public static string Prefix { get; private set; }
+
+
         public readonly EventId BotEventId = new EventId(666, "DUD Crypto");
-        public static string _prefix { get; private set; }
         public DiscordClient Client { get; private set; }
         public InteractivityExtension Interactivity { get; private set; }
         public CommandsNextExtension Commands { get; private set; }
@@ -42,7 +44,7 @@ namespace DUDCrypto.Model.Discord
             var configuration = JsonConvert.DeserializeObject<BotConfig>(json);
 
             //Giving a _prefix
-            _prefix = configuration.Prefix;
+            Prefix = configuration.Prefix;
 
             //Initialize bot
             Client = new DiscordClient(new DiscordConfiguration()
@@ -96,7 +98,7 @@ namespace DUDCrypto.Model.Discord
             if (_switcher == 4)
             {
                 await Client.UpdateStatusAsync(
-                    new DiscordActivity($"{Bot._prefix}help", ActivityType.Watching),
+                    new DiscordActivity($"{Bot.Prefix}help", ActivityType.Watching),
                     null,
                     null);
 

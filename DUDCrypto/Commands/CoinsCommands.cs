@@ -77,17 +77,17 @@ namespace DUDCrypto.Commands
                 //Price info
                 embed.AddField(
                     $"Change{DiscordText.BoldItalic("(1h)")}",
-                    change1h > 0 ? DiscordText.GreenLine($"{Numbers.EditPercent(change1h)}% ▲") : DiscordText.RedLine($"{Numbers.EditPercent(change1h)}% ▼"),
+                    change1h > 0 ? DiscordText.GreenLine($"{Numbers.EditToReadablePercent(change1h)}% ▲") : DiscordText.RedLine($"{Numbers.EditToReadablePercent(change1h)}% ▼"),
                     true);
 
                 embed.AddField(
                     $"Change{DiscordText.BoldItalic("(24h)")}",
-                    change24h > 0 ? DiscordText.GreenLine($"{Numbers.EditPercent(change24h)}% ▲") : DiscordText.RedLine($"{Numbers.EditPercent(change24h)}% ▼"),
+                    change24h > 0 ? DiscordText.GreenLine($"{Numbers.EditToReadablePercent(change24h)}% ▲") : DiscordText.RedLine($"{Numbers.EditToReadablePercent(change24h)}% ▼"),
                     true);
 
                 embed.AddField(
                     $"Change{DiscordText.BoldItalic("(7d)")}",
-                    change7d > 0 ? DiscordText.GreenLine($"{Numbers.EditPercent(change7d)}% ▲") : DiscordText.RedLine($"{Numbers.EditPercent(change7d)}% ▼"),
+                    change7d > 0 ? DiscordText.GreenLine($"{Numbers.EditToReadablePercent(change7d)}% ▲") : DiscordText.RedLine($"{Numbers.EditToReadablePercent(change7d)}% ▼"),
                     true);
 
                 embed.AddField(
@@ -406,7 +406,7 @@ namespace DUDCrypto.Commands
             }
 
             foreach (var item in percentes)
-                result += item > 0 ? DiscordText.GreenLine($"{Numbers.EditPercent(item)}% ▲") : DiscordText.RedLine($"{Numbers.EditPercent(item)}% ▼");
+                result += item > 0 ? DiscordText.GreenLine($"{Numbers.EditToReadablePercent(item)}% ▲") : DiscordText.RedLine($"{Numbers.EditToReadablePercent(item)}% ▼");
 
             return result;
         }
