@@ -36,7 +36,7 @@ namespace Converter
         public static string EditToReadableNumber(ulong number) => 
             AddingCommas(number.ToString());        
 
-        public static string EditPercent(double percent) => 
+        public static string EditToReadablePercent(double percent) => 
             Math.Round(percent, 2).ToString().Replace(',', '.');        
 
         private static string AddingCommas(string number)
@@ -52,6 +52,7 @@ namespace Converter
                     else
                         result += number[i];
                 }
+
                 if (result.EndsWith(','))
                     result = result.Remove(result.Length - 1, 1);
 
