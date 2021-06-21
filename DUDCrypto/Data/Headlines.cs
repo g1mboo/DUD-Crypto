@@ -18,14 +18,28 @@ namespace DUDCrypto.Data
 
         public static async void UploadAndUpdateNewsAsync(object sender)
         {
-            var site = new DecryptDOM();
-            News = await Task.Run(() => site.ReturnNews()).ConfigureAwait(false);
+            try
+            {
+                var site = new DecryptDOM();
+                News = await Task.Run(() => site.ReturnNews()).ConfigureAwait(false);
+            }
+            catch(Exception ex) 
+            {
+                Console.WriteLine("\r\n" + ex.Message + "\r\n");
+            }
         }
 
         public static async Task UploadEarnAsync()
         {
-            var site = new CoinmarketcapDOM();
-            Earn = await Task.Run(() => site.ReturnEarn()).ConfigureAwait(false);
+            try
+            {
+                var site = new CoinmarketcapDOM();
+                Earn = await Task.Run(() => site.ReturnEarn()).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("\r\n" + ex.Message + "\r\n");
+            }
         }
     }
 }
